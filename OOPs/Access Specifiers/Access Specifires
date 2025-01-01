@@ -1,0 +1,101 @@
+// Access Specifiers in Java
+
+// Access specifiers in Java determine the visibility and accessibility of a class, 
+// method, or variable in different contexts, i.e., within the same class, 
+// the same package, or from other packages. Java provides four types of access specifiers:
+
+// 1. Public:
+// - The 'public' access specifier allows the class, method, or variable to be accessed from anywhere in the application. 
+// - There are no restrictions on the accessibility of the public members, even across different packages.
+// - It is the least restrictive access modifier.
+// - Example: public variables and methods can be accessed by any other class, regardless of the package.
+ 
+// Example: 
+// public class Test { public int x; } 
+// 'x' can be accessed from any class, whether it's in the same package or another.
+
+// 2. Private:
+// - The 'private' access specifier restricts the access to the class members only within the same class. 
+// - Private members cannot be accessed or modified directly from any other class or package.
+// - It is the most restrictive access modifier, often used for variables to implement encapsulation.
+// - Example: private variables can only be accessed or modified through methods within the same class (like getters and setters).
+
+// Example: 
+// class Test { private int x; }
+// The variable 'x' is private and cannot be accessed directly from outside the class. 
+// It can only be accessed via a method in the same class.
+
+// 3. Protected:
+// - The 'protected' access specifier allows the class members to be accessed within the same class, 
+//   by subclasses (even if they are in a different package), and by other classes in the same package.
+// - Protected members can be inherited by subclasses, providing some level of accessibility while restricting direct access from non-subclass classes.
+// - Example: protected methods can be inherited and overridden by subclasses, but they are not accessible from non-subclass classes outside the package.
+
+// Example:
+// class Parent { protected int x; }
+// class Child extends Parent { void method() { System.out.println(x); } }
+// 'x' can be accessed in Child because it is protected and inherited.
+
+// 4. Default (Package-Private):
+// - If no access specifier is provided, Java uses the default access level, also called package-private.
+// - Members with default access can only be accessed within the same package, not from outside the package.
+// - This is the default access level when no explicit access modifier is used.
+// - Example: members are accessible by other classes in the same package, but not by classes in other packages.
+
+
+// Example:
+// class Test { int x; }
+// The variable 'x' has default (package-private) access, so it can be accessed only within classes of the same package.
+
+// Getter and Setter Methods in Java
+
+// Getters and Setters are methods used to provide controlled access to the fields (variables) of a class. 
+// These methods are part of the concept of **encapsulation**, where the internal state of an object is hidden 
+// from the outside world, and only specific, controlled access is provided.
+
+// 1. Getter Method:
+// - A getter method is used to retrieve the value of a private variable.
+// - It allows other classes to access the value of the variable while keeping the variable itself private.
+// - Getters are usually named starting with 'get' followed by the variable name (e.g., getName()).
+// - They provide read-only access to the private data, ensuring that the data cannot be directly modified outside the class.
+// - Example: getName() returns the value of 'name' without allowing direct access to the 'name' field.
+
+// Example:
+// public String getName() {
+//     return this.name;  // Returns the value of the 'name' variable
+// }
+
+// 2. Setter Method:
+// - A setter method is used to modify the value of a private variable.
+// - Setters typically include validation or logic before setting the value to ensure it meets certain conditions.
+// - Setters are usually named starting with 'set' followed by the variable name (e.g., setName()).
+// - They provide write-only access to the private data, allowing modification but ensuring controlled access.
+// - Example: setName() allows setting the value of 'name' but can include logic to restrict certain invalid values.
+
+// Example:
+// public void setName(String name) {
+//     this.name = name;  // Sets the value of the 'name' variable
+// }
+
+// Why Use Getter and Setter Methods?
+
+// 1. Encapsulation:
+// - Getters and setters are fundamental in implementing encapsulation in object-oriented programming.
+// - They allow controlling how a field's value is accessed or modified, preventing unauthorized access or changes to internal data.
+// - Encapsulation helps maintain the integrity of an object's state by restricting direct access to its internal variables.
+
+// 2. Data Validation:
+// - Setter methods can validate the input before updating the field value, ensuring that only valid data is set.
+// - For example, a setter can check if the input meets a specific format or range before assigning it to a field.
+
+// 3. Read-Only and Write-Only Properties:
+// - A getter provides read-only access to a field, while a setter provides write-only access.
+// - Some fields may only require retrieval (getter), while others may only need modification (setter), depending on the scenario.
+// - This separation of responsibilities gives more control over the object's behavior and helps avoid errors.
+
+
+// Conclusion:
+
+// - Access specifiers are critical for defining the visibility and accessibility of classes, methods, and variables. 
+// - They enable a clean separation of concerns and enforce security by controlling how data is accessed.
+// - Getters and setters help implement encapsulation, allowing controlled access and modification of private variables, while supporting data validation and consistency.
