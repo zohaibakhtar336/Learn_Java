@@ -1,0 +1,129 @@
+// ============================
+// CONSTRUCTOR IN JAVA
+// ============================
+
+/*
+ * A constructor in Java is a special type of method that is used to initialize
+ * the newly created objects. It is automatically called when an object of a 
+ * class is instantiated. The main purpose of a constructor is to assign values 
+ * to the data members of the same class during object creation.
+ */
+
+// Key Characteristics of Constructors:
+// 1. A constructor has the same name as the class name. 
+// 2. Constructors do not have a return type, not even `void`.
+// 3. Constructors are automatically invoked when an object of the class is created.
+
+// ============================
+// Types of Constructors in Java
+// ============================
+
+// 1. Default Constructor (No-Argument Constructor):
+// - The default constructor is provided by the compiler if no constructors are explicitly defined in the class.
+// - It initializes the instance variables to their default values (e.g., `null`, `0`, `false`, etc.)
+// - You can also explicitly define a default constructor with no parameters.
+// - Example:
+//    class MyClass {
+//        MyClass() { 
+//            // Initialization code here
+//        }
+//    }
+//    MyClass obj = new MyClass(); // Calls the default constructor
+
+// 2. Parameterized Constructor:
+// - A parameterized constructor is one that accepts parameters (arguments) during object creation.
+// - This allows different objects to be initialized with different values.
+// - It gives the flexibility to initialize an object with specific values when the object is created.
+// - Example:
+//    class Person {
+//        String name;
+//        int age;
+//
+//        // Parameterized constructor
+//        Person(String name, int age) {
+//            this.name = name;  // Assigning the parameter to the instance variable
+//            this.age = age;    // Assigning the parameter to the instance variable
+//        }
+//    }
+//
+//    Person person1 = new Person("Alice", 25);  // Using parameterized constructor
+
+// 3. Copy Constructor:
+// - A copy constructor is used to create a new object by copying the values from an existing object of the same class.
+// - This is not provided by the compiler in Java, but you can create one explicitly.
+// - It is often used when you need to create a duplicate object with the same values.
+// - Example:
+//    class Book {
+//        String title;
+//        String author;
+//
+//        // Copy constructor
+//        Book(Book b) {
+//            this.title = b.title;
+//            this.author = b.author;
+//        }
+//    }
+//    Book originalBook = new Book("Java Basics", "John Doe");
+//    Book copiedBook = new Book(originalBook); // Creates a copy of originalBook
+
+// ============================
+// Constructor Overloading in Java
+// ============================
+
+// Constructor overloading is the process of defining multiple constructors with different parameter lists in the same class.
+// The constructor with matching arguments will be called based on the object creation.
+// Example of constructor overloading:
+//    class Shape {
+//        int length, width;
+//
+//        // Constructor with no parameters
+//        Shape() {
+//            length = 0;
+//            width = 0;
+//        }
+//
+//        // Constructor with parameters
+//        Shape(int l, int w) {
+//            length = l;
+//            width = w;
+//        }
+//
+//        void display() {
+//            System.out.println("Length: " + length + ", Width: " + width);
+//        }
+//    }
+//
+//    Shape shape1 = new Shape();  // Calls the default constructor
+//    Shape shape2 = new Shape(5, 10);  // Calls the parameterized constructor
+
+// ============================
+// Constructor Chaining in Java
+// ============================
+
+// Constructor chaining refers to calling one constructor from another constructor in the same or parent class.
+// It is achieved using the `this()` keyword for calling constructors within the same class or `super()` for calling parent class constructors.
+// Example:
+//    class Animal {
+//        Animal() {
+//            System.out.println("Animal created");
+//        }
+//    }
+//
+//    class Dog extends Animal {
+//        Dog() {
+//            super();  // Calls the parent class constructor
+//            System.out.println("Dog created");
+//        }
+//    }
+//
+//    Dog dog = new Dog();  // First calls Animal's constructor, then Dog's constructor
+
+// ============================
+// Important Points about Constructors
+// ============================
+// 1. A constructor is called when an object of a class is created using the `new` keyword.
+// 2. The `this()` keyword is used for constructor chaining, allowing one constructor to call another within the same class.
+// 3. A constructor is not inherited by subclasses, but they can call a parent class constructor using the `super()` keyword.
+// 4. A class can have multiple constructors (constructor overloading), but each must have a different parameter list.
+// 5. If no constructor is defined, Java provides a default constructor that initializes the object with default values.
+
