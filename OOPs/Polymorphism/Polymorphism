@@ -1,0 +1,32 @@
+// Polymorphism in Java:
+//
+// Polymorphism is a core concept in Object-Oriented Programming (OOP) that allows objects or methods
+// to take on multiple forms or behaviors. It enables flexibility and reusability in code.
+//
+// The word "Polymorphism" comes from the Greek words "poly" (many) and "morph" (forms).
+//
+// In Java, polymorphism allows the same method or operator to perform different actions
+// based on the context or the type of object.
+//
+// Polymorphism is broadly classified into two types:
+//
+// 1. Compile-time Polymorphism or Method Overloading (Static Polymorphism):
+//    - Achieved through Method Overloading.
+//    - The method to be executed is determined during compilation.
+//    - Allows multiple methods with the same name but different parameter lists or data types.
+//
+// 2. Runtime Polymorphism or Method Overriding (Dynamic Polymorphism):
+//    - Achieved through Method Overriding.
+//    - The method to be executed is determined during runtime based on the object type.
+//    - Allows a subclass to provide its specific implementation of a method already defined in the parent class.
+//
+// Benefits of Polymorphism:
+// - Increases code flexibility and reusability.
+// - Simplifies maintenance and extensibility of the code.
+// - Supports the concept of "one interface, many implementations."
+//
+// Example Scenarios of Polymorphism:
+// - Method Overloading (Compile-time): A Calculator class having multiple "add" methods for different input types.
+// - Method Overriding (Runtime): A generic Animal class with specific behaviors implemented in subclasses like Dog and Cat.
+//
+// Polymorphism enhances the efficiency of the code and is a fundamental feature of Java's object-oriented design.
