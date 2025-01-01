@@ -1,0 +1,42 @@
+// Theory of Inheritance in Java:
+// --------------------------------------
+// 1. What is Inheritance?
+// Inheritance is a core concept in Object-Oriented Programming (OOP) that allows one class (child or subclass) 
+// to acquire the properties and behaviors (methods) of another class (parent or superclass).
+// It promotes code reuse, scalability, and a logical hierarchy in the program.
+
+// 2. Why Use Inheritance?
+// - To reuse code from the parent class without rewriting it in the child class.
+// - To establish a "is-a" relationship between classes (e.g., a Dog "is-a" Animal).
+// - To make code modular, organized, and easier to maintain.
+
+// 3. Key Terminologies:
+// - Parent Class (Superclass): The class whose properties and methods are inherited.
+// - Child Class (Subclass): The class that inherits from the parent class.
+// - `extends` Keyword: Used to create inheritance between classes.
+// - Method Overriding: Allows the subclass to modify the behavior of methods inherited from the parent class.
+
+// 4. Types of Inheritance in Java:
+// a) Single Inheritance: 
+//    A child class inherits from one parent class.
+//
+// b) Multilevel Inheritance: 
+//    A class inherits from another class, which is itself a child of some other class.
+//
+// c) Hierarchical Inheritance: 
+//    Multiple child classes inherit from a single parent class.
+//
+// d) Multiple Inheritance (via Interfaces): 
+//    A class can implement multiple interfaces, allowing it to inherit behaviors from multiple sources.
+//
+// e) Hybrid Inheritance (via Interfaces): 
+//    A combination of two or more inheritance types, achieved using interfaces.
+
+// 5. Java's Limitations:
+// - Java does not support multiple inheritance with classes to avoid ambiguity caused by the "Diamond Problem."
+// - This limitation is resolved by using interfaces for multiple inheritance.
+
+// 6. Benefits of Inheritance:
+// - Code Reusability: Write once, reuse in multiple classes.
+// - Logical Hierarchy: Reflects real-world relationships between objects.
+// - Easy Maintenance: Changes in the parent class automatically reflect in the child classes.
