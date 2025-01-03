@@ -1,0 +1,31 @@
+// Encapsulation in Java
+// Encapsulation is a fundamental concept in Object-Oriented Programming (OOP) that focuses on wrapping data (variables) and methods (functions) into a single unit called a class.
+// This technique restricts direct access to data and only allows modification through controlled interfaces.
+
+// Key Concepts of Encapsulation:
+// 1. Data Hiding: Internal data of the class is hidden from external classes.
+// 2. Restricted Access: Data can only be accessed and modified through public methods.
+// 3. Security: Protects the integrity of data by preventing unauthorized access.
+// 4. Simplicity: Makes code easier to manage and understand by reducing complexity.
+
+// How to Implement Encapsulation in Java:
+// - Use the 'private' keyword to declare class variables.
+// - Use 'public' getter and setter methods to provide controlled access to the data.
+
+// Summary of Encapsulation Benefits:
+// - Prevents direct access to class data.
+// - Provides controlled data access using getter and setter methods.
+// - Improves security and reduces the risk of data corruption.
+// - Simplifies code management and enhances readability.
+
+// Methods in Encapsulation:
+
+// Getter Method:
+// A getter method is used to access the value of a private field.
+// It allows external code to read the value of the field while keeping the field itself private.
+// A getter does not modify any data, it simply returns the value of the field.
+
+// Setter Method:
+// A setter method is used to modify the value of a private field.
+// It provides a controlled way to update the field's value from outside the class.
+// Setters often include validation to ensure that only valid data is assigned to the field (e.g., no negative values).
