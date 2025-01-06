@@ -1,0 +1,36 @@
+// Abstraction in Java:
+// Abstraction is one of the fundamental concepts of Object-Oriented Programming (OOP) that focuses on hiding the complexity of a system and exposing only the essential features or functionality.
+// The goal of abstraction is to reduce complexity and allow the programmer to focus on high-level functionality rather than the intricate implementation details.
+
+// Types of Abstraction in Java:
+// There are two primary ways to achieve abstraction in Java:
+// 1. Abstract Class
+// 2. Interface
+
+// 1. Abstract Class:
+// - An abstract class is a class that cannot be instantiated on its own (i.e., cannot create objects from it directly).
+// - It can contain both abstract methods (without a body) and concrete methods (with a body).
+// - Abstract methods are meant to be implemented by subclasses, while concrete methods can be directly used by the abstract class itself or its subclasses.
+// - An abstract class can also have fields (variables), constructors, and access modifiers, just like a regular class.
+// - A class that contains at least one abstract method must be declared abstract.
+// - Abstract classes are used when a base class needs to define some shared behavior and enforce the implementation of certain methods in subclasses.
+
+// 2. Interface:
+// - An interface in Java is a reference type, similar to a class, but it only contains method declarations (abstract methods), constants, default methods, static methods, and nested types.
+// - The methods in interfaces are abstract by default, and must be implemented by the classes that "implement" the interface.
+// - A class can implement multiple interfaces, providing a form of multiple inheritance for behavior, which is not possible with abstract classes.
+// - Interfaces are used to define a contract or a set of methods that implementing classes must fulfill, without specifying how they will be implemented.
+
+// Key Concepts and Points of Abstraction:
+// - **Hiding Complexity**: Abstraction hides the implementation details of an object and only shows the essential features or functionalities to the user.
+// - **Simplified Interface**: Abstraction allows the programmer to interact with a simplified interface, abstracting away unnecessary details.
+// - **Implementation and Design Separation**: Abstraction allows for the separation of the "what" (interface) from the "how" (implementation), which improves modularity and maintainability.
+// - **Reuse and Flexibility**: Abstraction allows you to design reusable components, as you only need to define the high-level behavior, and the implementation can change over time.
+// - **Achieving Loose Coupling**: Abstraction helps reduce the coupling between components of the system, making it easier to modify the system without affecting the entire program.
+
+// Difference between Abstract Classes and Interfaces:
+// 1. **Abstract Classes** can contain both abstract and concrete methods, whereas **Interfaces** can contain only abstract methods (before Java 8).
+// 2. An **abstract class** can have instance variables, constructors, and methods with different access modifiers, while an **interface** can only have constants and abstract methods (before Java 8), and methods are implicitly public.
+// 3. A **class** can extend only one **abstract class**, but it can implement multiple **interfaces**, which is an example of multiple inheritance of behavior.
+// 4. Abstract classes are used when there is a shared base functionality, while interfaces are used when the classes need to follow a certain contract or behavior, without enforcing the base functionality.
+
