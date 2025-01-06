@@ -1,0 +1,32 @@
+/*
+ * The `static` keyword in Java is a modifier used for variables, methods, blocks, and nested classes. 
+ * It indicates that the member belongs to the class itself, rather than to instances (objects) of the class.
+ * 
+ * 1. **Static Variables**:
+ *    - Static variables are class-level variables. 
+ *    - They are shared among all instances (objects) of the class.
+ *    - A static variable is allocated once when the class is loaded into memory and retains its value across all objects.
+ *    - Static variables can be accessed using the class name, without the need to create an instance of the class.
+ * 
+ * 2. **Static Methods**:
+ *    - Static methods are associated with the class, not with any specific object.
+ *    - They can be called without creating an object of the class.
+ *    - Static methods can only directly access other static members of the class (static variables and methods).
+ *    - They cannot access non-static members (instance variables and methods) because non-static members require an object to be referenced.
+ * 
+ * 3. **Static Blocks**:
+ *    - Static blocks are used for initializing static variables.
+ *    - A static block is executed only once when the class is loaded into memory.
+ *    - It is executed before any constructor or method is called, making it useful for initialization purposes that need to happen before objects are created.
+ * 
+ * 4. **Static Nested Classes**:
+ *    - A static nested class is a nested class that is declared as static.
+ *    - Static nested classes can be instantiated without creating an instance of the outer class.
+ *    - They can only access the static members of the outer class and cannot access non-static members directly.
+ * 
+ * **Summary**:
+ * - The `static` keyword is used to define class-level members, rather than object-level members.
+ * - Static members are shared across all objects of the class, and they exist as long as the class is loaded in memory.
+ * - They provide memory efficiency and make it easier to work with common data and methods at the class level.
+ * - Static variables and methods can be accessed directly via the class name, while non-static members require an object to access.
+ */
