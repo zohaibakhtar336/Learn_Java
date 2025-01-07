@@ -1,0 +1,28 @@
+// BufferedReader is part of the java.io package and is used for efficient reading of characters from input streams (like files, console, etc.).
+
+// It works by buffering the input, meaning it reads large chunks of data at a time from the underlying input stream into memory. 
+// This minimizes the number of read operations, improving performance, especially when reading data from files or other slow sources.
+
+// BufferedReader provides methods to read data in a buffered manner, which helps reduce the overhead of multiple I/O operations.
+// It is generally used to read text data (character data), unlike InputStream which handles byte data.
+
+// The primary method in BufferedReader is readLine(), which reads a whole line of text at once, making it convenient for reading input from the user
+// or reading lines from a file.
+
+// BufferedReader is commonly used with InputStreamReader to read input from the console, or with FileReader to read data from a file.
+// The InputStreamReader converts byte streams into character streams, while BufferedReader provides efficient reading of characters.
+
+// It is important to always close the BufferedReader after use to release the resources associated with it, using the close() method.
+// Failing to close it can lead to resource leaks.
+
+// BufferedReader can throw IOExceptions, so proper exception handling is required when working with it, either with try-catch blocks or by declaring 
+// the method to throw IOException.
+
+// BufferedReader is faster than using FileReader or InputStreamReader directly for reading data, because it reduces the number of I/O operations
+// by reading large blocks of data at once.
+
+// It doesn't support reading primitive types like int, float, etc., directly; you would need to convert the read data (which is in String format)
+// to the appropriate type (using methods like Integer.parseInt()).
+
+// BufferedReader is useful in scenarios where large amounts of data need to be read efficiently, such as processing large files or handling large
+// inputs in command-line applications.
