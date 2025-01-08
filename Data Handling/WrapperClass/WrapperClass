@@ -1,0 +1,54 @@
+// **Wrapper Class Concept in Java**
+
+// 1. **What is a Wrapper Class?**
+// A Wrapper class in Java is a class that encapsulates a primitive data type (like int, char, etc.) into an object.
+// This allows us to treat primitives as objects, making it possible to use them in situations where objects are required, like in collections.
+
+// 2. **Primitive Data Types in Java:**
+// Java has eight primitive data types:
+// - byte, short, int, long, float, double, char, boolean
+
+// 3. **Corresponding Wrapper Classes:**
+// For each of the primitive types, Java provides a corresponding wrapper class:
+// - byte -> Byte
+// - short -> Short
+// - int -> Integer
+// - long -> Long
+// - float -> Float
+// - double -> Double
+// - char -> Character
+// - boolean -> Boolean
+
+// 4. **Autoboxing:**
+// Autoboxing is the automatic conversion of a primitive data type to its corresponding wrapper class.
+// Example: Java automatically converts an int value to an Integer object when needed.
+
+// 5. **Unboxing:**
+// Unboxing is the automatic conversion of a wrapper class object back to its corresponding primitive type.
+// Example: Java automatically converts an Integer object back to an int when required.
+
+// 6. **Why Use Wrapper Classes?**
+// - **Object Manipulation:** Wrapper classes are essential when dealing with APIs or collections that only accept objects, like ArrayList.
+// - **Nullability:** Unlike primitive types, wrapper classes can represent a null value, useful for situations like databases or complex data structures.
+// - **Utility Methods:** Wrapper classes come with methods that can help convert data types (e.g., parsing strings into numbers) or compare values (e.g., comparing Integer objects).
+
+// 7. **Common Methods of Wrapper Classes:**
+// - `parse<Type>()`: Converts a string to its corresponding primitive type.
+//   Example: `Integer.parseInt("123")` converts a string to an int.
+// - `valueOf()`: Converts a primitive value or string to its wrapper class.
+//   Example: `Integer.valueOf(100)` converts an int to an Integer object.
+// - `toString()`: Converts the wrapper object to a string representation.
+//   Example: `Integer.toString(123)` converts an Integer object to a string.
+
+// 8. **Wrapper Classes in Collections:**
+// Collections like ArrayList cannot store primitive types. Therefore, we use wrapper classes instead of primitives to store values in collections.
+// For example, ArrayList can store Integer (instead of int), Double (instead of double), etc.
+
+// 9. **Immutable Nature of Wrapper Classes:**
+// Wrapper classes are immutable, meaning their state (value) cannot be changed after they are created.
+// Any modification results in creating a new object with the updated value, instead of modifying the existing one.
+
+// 10. **Performance Considerations:**
+// While wrapper classes provide flexibility and are required in certain cases (like collections), they come with overhead.
+// This is because creating and using wrapper objects requires more memory and processing time compared to using primitive data types directly.
+// Hence, they should be used when necessary (for example, to handle null values or when object behavior is required), but primitive types should be preferred in performance-critical applications.
