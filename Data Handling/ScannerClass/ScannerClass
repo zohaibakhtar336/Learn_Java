@@ -1,0 +1,43 @@
+// The Scanner class is part of the java.util package in Java.
+// It is used for taking input from the user or other data sources like files, strings, and input streams.
+
+// To use the Scanner class, you need to import it from the java.util package.
+// Example: import java.util.Scanner;
+
+// The Scanner class works by parsing primitive types (int, double, etc.) and strings using various delimiters (default is whitespace).
+
+// Key Functionalities of Scanner:
+// - Read input from different sources: console, files, strings, input streams.
+// - Supports input of different data types: int, double, float, long, short, byte, boolean, and String.
+// - Default delimiter is whitespace (space, tab, newline).
+
+// Common Methods of Scanner Class:
+// - nextInt(): Reads an integer input.
+// - nextDouble(): Reads a double input.
+// - nextLine(): Reads a full line as a String.
+// - next(): Reads the next token (word) as a String.
+// - nextBoolean(): Reads a boolean value (true/false).
+// - nextFloat(), nextLong(), nextShort(), nextByte(): Reads respective data types.
+// - close(): Closes the Scanner object to free resources.
+
+// How Scanner Works:
+// - Scanner breaks the input into tokens using delimiters. 
+// - Default delimiter is whitespace. 
+// - Can be changed using useDelimiter() method.
+
+// Example of changing the delimiter:
+// Scanner sc = new Scanner(System.in);
+// sc.useDelimiter(",");
+
+// Handling Exceptions:
+// - InputMismatchException: Thrown when input type is not matched with the expected type.
+// - NoSuchElementException: Thrown when no more input is available.
+// - IllegalStateException: Thrown when Scanner is closed and used again.
+
+// Best Practices:
+// - Always close the Scanner using sc.close() to avoid resource leaks.
+// - Use nextLine() carefully, especially after nextInt() or nextDouble() as it can lead to skipping input issues.
+// - For larger data inputs, consider using BufferedReader instead, as it is faster.
+
+// Package Information:
+// - Scanner belongs to the java.util package.
