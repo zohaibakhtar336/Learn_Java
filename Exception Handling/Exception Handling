@@ -1,0 +1,126 @@
+// Exception Handling in Java
+
+/* 
+   Exception handling in Java is a powerful mechanism to handle runtime errors,
+   ensuring the normal flow of the application is maintained. It involves the use of
+   specific keywords to deal with exceptional conditions (errors) without crashing the program.
+   Java provides a robust mechanism to handle exceptions using the following components:
+*/
+
+// 1. try block
+/*
+   - The try block is used to enclose the code that might throw an exception.
+   - It is the starting point of the exception handling mechanism.
+   - If no exception occurs, the code within the try block executes normally.
+   - If an exception occurs, the flow of execution is transferred to the associated catch block (if any).
+   - Syntax:
+      try {
+          // Code that may throw an exception
+      }
+*/
+
+// 2. catch block
+/*
+   - The catch block is used to handle the exception thrown by the try block.
+   - It follows the try block and catches the exception based on the exception type defined in its parameter.
+   - Multiple catch blocks can be used to handle different types of exceptions.
+   - The catch block prevents the program from terminating abruptly by handling the exception.
+   - Syntax:
+      catch (ExceptionType e) {
+          // Code to handle the exception
+      }
+*/
+
+// 3. finally block
+/*
+   - The finally block is optional and is used to write code that needs to be executed after the try block
+     regardless of whether an exception occurs or not.
+   - It is typically used for resource cleanup, such as closing file streams, database connections, etc.
+   - The finally block always executes, even if an exception is thrown or caught.
+   - If there is no exception, the finally block still executes after the try block.
+   - Syntax:
+      finally {
+          // Code to clean up resources, or code that must always be executed
+      }
+*/
+
+// 4. throw keyword
+/*
+   - The throw keyword is used to explicitly throw an exception from a method or block of code.
+   - You can throw both predefined and user-defined exceptions.
+   - It allows you to signal an error condition and pass control to an exception handler (catch block).
+   - Syntax:
+      throw new ExceptionType("Error Message");
+*/
+
+// 5. throws keyword
+/*
+   - The throws keyword is used in a method signature to declare that a method may throw one or more exceptions.
+   - It is used when a method cannot handle certain exceptions and delegates the responsibility to the calling method.
+   - The calling method can catch the exception, or it can further propagate the exception using throws.
+   - Syntax:
+      public void methodName() throws ExceptionType1, ExceptionType2 {
+          // Code that may throw exceptions
+      }
+*/
+
+// 6. Exception Hierarchy
+/*
+   - In Java, exceptions are objects that inherit from the Throwable class.
+   - Throwable has two main subclasses: Error and Exception.
+   - Errors represent severe problems that a program usually cannot recover from (e.g., OutOfMemoryError).
+   - Exceptions represent conditions that a program can handle.
+   - Exception is further divided into two categories:
+     1. Checked Exceptions: These are exceptions that are checked at compile-time. 
+        For example, IOException, SQLException.
+     2. Unchecked Exceptions: These are exceptions that occur at runtime and are not checked at compile-time. 
+        For example, ArithmeticException, NullPointerException.
+*/
+
+// 7. Custom Exceptions
+/*
+   - You can create your own exception classes in Java by extending the Exception class.
+   - Custom exceptions allow you to define specific error messages and behaviors for particular situations.
+   - To create a custom exception, you need to extend the Exception class (for checked exceptions) or RuntimeException class (for unchecked exceptions).
+   - Syntax for creating a custom exception:
+      public class MyException extends Exception {
+          // Constructor and custom behavior
+      }
+*/
+
+// 8. Multiple Catch Blocks
+/*
+   - Java allows multiple catch blocks to catch different types of exceptions that might arise from the try block.
+   - Each catch block handles a specific exception type and must be ordered from the most specific exception type to the most general.
+   - If an exception matches a catch block, that block is executed, and other blocks are skipped.
+   - Syntax:
+      try {
+          // Code that may throw multiple exceptions
+      } catch (SpecificException e) {
+          // Handle specific exception
+      } catch (AnotherException e) {
+          // Handle another exception
+      }
+*/
+
+// 9. Exception Propagation
+/*
+   - Exception propagation refers to the process where an exception is passed up the call stack to find a suitable catch block.
+   - If a method doesn’t handle an exception using a catch block, the exception is propagated to the calling method.
+   - This process continues until the exception is either caught or reaches the main method, in which case the program terminates.
+*/
+
+// 10. Stack Trace
+/*
+   - When an exception occurs and is not caught, a stack trace is printed that shows the sequence of method calls leading to the exception.
+   - The stack trace helps to debug and locate the source of the problem by listing the class names, method names, and line numbers.
+*/
+
+// Summary of Exception Handling Process:
+/*
+   - A try block encloses the code that might throw an exception.
+   - If an exception occurs, it is caught by a corresponding catch block.
+   - After execution of the try-catch blocks, the finally block (if any) will execute.
+   - You can throw exceptions explicitly using the throw keyword.
+   - You can declare that a method may throw exceptions using the throws keyword.
+*/
