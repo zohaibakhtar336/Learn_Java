@@ -1,0 +1,131 @@
+// Java LinkedList: A part of the Java Collections Framework implementing the List and Deque interfaces.
+// It is a doubly linked list where each element (node) stores data and references to the next and previous elements.
+
+/*
+    Key Features of LinkedList:
+    - Implements List and Deque interfaces.
+    - Doubly linked list structure.
+    - Allows duplicate elements.
+    - Maintains insertion order.
+    - Not synchronized (not thread-safe).
+    - Better performance for insertions and deletions compared to ArrayList.
+*/
+
+/*
+    How LinkedList Works:
+    - Each element in a LinkedList is called a "Node."
+    - A Node contains:
+      1. Data (value)
+      2. Reference to the next node (next pointer)
+      3. Reference to the previous node (prev pointer)
+    
+    - Head: The first node in the list.
+    - Tail: The last node in the list.
+    - The list can be traversed both forward and backward due to its doubly linked structure.
+*/
+
+/*
+    Constructors of LinkedList:
+    - LinkedList(): Creates an empty linked list.
+    - LinkedList(Collection<? extends E> c): Creates a linked list initialized with elements from the specified collection.
+*/
+
+/*
+    Adding Elements to LinkedList:
+    - add(E e): Adds an element to the end of the list.
+    - add(int index, E element): Inserts an element at the specified position.
+    - addFirst(E e): Adds an element at the beginning of the list.
+    - addLast(E e): Adds an element at the end of the list.
+    - offer(E e): Adds an element to the end of the list (returns true/false).
+    - offerFirst(E e): Adds an element at the beginning.
+    - offerLast(E e): Adds an element at the end.
+*/
+
+/*
+    Removing Elements from LinkedList:
+    - remove(): Removes the first element.
+    - remove(int index): Removes the element at the specified index.
+    - remove(Object o): Removes the first occurrence of the specified element.
+    - removeFirst(): Removes the first element.
+    - removeLast(): Removes the last element.
+    - poll(): Retrieves and removes the head (first element).
+    - pollFirst(): Retrieves and removes the first element.
+    - pollLast(): Retrieves and removes the last element.
+    - clear(): Removes all elements from the list.
+*/
+
+/*
+    Accessing Elements in LinkedList:
+    - get(int index): Returns the element at the specified index.
+    - getFirst(): Returns the first element.
+    - getLast(): Returns the last element.
+    - peek(): Returns the first element without removing it.
+    - peekFirst(): Returns the first element without removing it.
+    - peekLast(): Returns the last element without removing it.
+*/
+
+/*
+    Updating Elements in LinkedList:
+    - set(int index, E element): Replaces the element at the specified position with the given element.
+*/
+
+/*
+    Searching Elements in LinkedList:
+    - contains(Object o): Checks if the list contains the specified element.
+    - indexOf(Object o): Returns the index of the first occurrence of the element.
+    - lastIndexOf(Object o): Returns the index of the last occurrence of the element.
+*/
+
+/*
+    Iterating Through LinkedList:
+    - Using Iterator: Forward iteration.
+    - Using ListIterator: Bi-directional iteration.
+    - Using enhanced for loop (for-each).
+    - Using forEach() method with lambda expressions (Java 8+).
+*/
+
+/*
+    LinkedList vs ArrayList:
+    - ArrayList is backed by a dynamic array, while LinkedList is backed by a doubly linked list.
+    - ArrayList provides faster random access (O(1)) compared to LinkedList (O(n)).
+    - LinkedList provides faster insertions and deletions in the middle (O(1) for insertion/deletion, O(n) for traversal).
+    - ArrayList consumes less memory compared to LinkedList because it doesn’t require storing references for previous and next nodes.
+*/
+
+/*
+    Performance Considerations:
+    - Retrieval: Slower (O(n)) due to the need for traversal.
+    - Insertion/Deletion: Faster than ArrayList (O(1) when adding/removing at the ends).
+    - Memory Overhead: Higher than ArrayList due to additional node references (prev, next).
+*/
+
+/*
+    Use Cases of LinkedList:
+    - When frequent insertions and deletions in the middle of the list are required.
+    - When memory usage is not a primary concern.
+    - When sequential access is preferred over random access.
+*/
+
+/*
+    Thread Safety:
+    - LinkedList is not synchronized by default.
+    - For thread-safe operations, you can use `Collections.synchronizedList()` or consider using `CopyOnWriteArrayList`.
+*/
+
+/*
+    Internal Working of LinkedList:
+    - Internally, the LinkedList class uses a private static class `Node<E>` to represent each node.
+    - Each node stores:
+        1. `E item`: The actual data.
+        2. `Node<E> next`: Reference to the next node.
+        3. `Node<E> prev`: Reference to the previous node.
+    - When an element is added or removed, the pointers of the neighboring nodes are adjusted accordingly.
+*/
+
+/*
+    Common Mistakes with LinkedList:
+    - Using LinkedList for frequent random access (prefer ArrayList in such cases).
+    - Ignoring the memory overhead for large datasets.
+    - Using LinkedList in multi-threaded environments without proper synchronization.
+*/
+
