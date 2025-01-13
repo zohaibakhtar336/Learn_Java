@@ -1,0 +1,98 @@
+// HashSet in Java is a class that implements the Set interface and is backed by a hash table.
+// It does not allow duplicate elements and does not maintain the order of elements.
+
+// 1. Characteristics of HashSet
+/*
+    - HashSet is part of the Java Collections Framework and implements the Set interface.
+    - It stores elements in a hash table, ensuring unique elements are stored.
+    - It does not allow duplicate elements. If you try to add a duplicate, the add() method will return false.
+    - HashSet does not maintain the insertion order of elements. The elements are stored in an arbitrary order.
+    - The performance of HashSet is generally good for operations like add(), remove(), and contains(), 
+      since they are backed by a hash table.
+    - HashSet allows one null element (depending on the implementation, but usually it does).
+*/
+
+// 2. Internal Working of HashSet
+/*
+    - HashSet internally uses a HashMap (specifically, an empty value for the map) to store its elements.
+    - When an element is added, its hash code is computed, and it is stored in the hash table at the corresponding location.
+    - If two elements have the same hash code (i.e., they are hash collisions), they are stored in a linked list or tree structure at the same index.
+    - The uniqueness of elements is determined by the hash code and the equals() method. 
+    - If two objects have the same hash code, the equals() method is used to check if they are equal.
+*/
+
+// 3. Methods of HashSet
+/*
+    - add(E element): Adds the specified element to the set if it is not already present. Returns true if 
+      the element was added, false otherwise.
+    
+    - remove(Object o): Removes the specified element from the set if it is present. Returns true if the 
+      element was removed, false otherwise.
+    
+    - contains(Object o): Returns true if the set contains the specified element, false otherwise.
+    
+    - size(): Returns the number of elements in the set.
+    
+    - isEmpty(): Returns true if the set contains no elements, false otherwise.
+    
+    - clear(): Removes all elements from the set.
+    
+    - iterator(): Returns an iterator over the elements in the set. HashSet is iterable but does not guarantee 
+      any specific order.
+    
+    - addAll(Collection<? extends E> c): Adds all elements from the specified collection to the set.
+    
+    - removeAll(Collection<?> c): Removes all elements in the specified collection from the set.
+    
+    - retainAll(Collection<?> c): Retains only the elements in the set that are contained in the specified collection.
+    
+    - equals(Object o): Compares the specified object with the HashSet for equality. HashSet is equal to 
+      another HashSet if both contain the same elements.
+    
+    - hashCode(): Returns the hash code of the set, which is computed based on the hash codes of the elements.
+*/
+
+// 4. Performance Considerations
+/*
+    - HashSet generally provides constant time (O(1)) performance for the basic operations (add, remove, contains) 
+      assuming the hash function disperses elements properly among the buckets.
+    
+    - The performance can degrade if the hash code of elements is poorly designed, causing hash collisions.
+    
+    - The HashSet can grow or shrink dynamically based on the number of elements. However, the internal capacity 
+      and load factor control how often the set is resized.
+    
+    - The default initial capacity is 16, and the default load factor is 0.75. When the number of elements exceeds 
+      75% of the capacity, the HashSet will resize itself.
+*/
+
+// 5. HashSet vs. Other Set Implementations
+/*
+    - HashSet vs. TreeSet: 
+        - HashSet does not maintain any order, while TreeSet sorts elements in natural order or based on a 
+          comparator.
+        - TreeSet is slower than HashSet for basic operations like add() and remove() because it requires 
+          sorting.
+    
+    - HashSet vs. LinkedHashSet:
+        - LinkedHashSet is similar to HashSet but maintains the order of insertion (FIFO order).
+        - LinkedHashSet is slightly slower than HashSet due to the overhead of maintaining the insertion order.
+*/
+
+// 6. When to Use HashSet
+/*
+    - Use HashSet when you need to store unique elements and don't care about the order of insertion.
+    - It is suitable when you are performing frequent operations like adding, removing, and checking for existence of elements.
+    - It is ideal when you have a large number of elements and require good performance for basic set operations.
+*/
+
+// 7. Common Pitfalls and Considerations
+/*
+    - If you use custom objects as elements in a HashSet, make sure they correctly override the hashCode() 
+      and equals() methods to ensure uniqueness is based on the actual content of the objects, not just their references.
+    
+    - Using a HashSet with elements that do not override hashCode() and equals() will result in incorrect behavior.
+    
+    - Avoid using HashSet with objects that have mutable fields, as changes to the fields can affect the object's 
+      hash code and disrupt the functionality of the HashSet.
+*/
