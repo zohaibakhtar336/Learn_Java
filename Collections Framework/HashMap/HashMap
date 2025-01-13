@@ -1,0 +1,121 @@
+// HashMap is a part of the Java Collections Framework and implements the Map interface.
+// It stores data in key-value pairs where each key is unique, and it maps to a single value.
+
+/*
+    1. Structure of HashMap:
+    - HashMap internally uses a hash table to store the data.
+    - Each key in the map is hashed using its `hashCode()` method to determine its bucket location.
+    - A bucket is essentially a linked list or a balanced tree (if there are too many collisions).
+*/
+
+// 2. Key Properties of HashMap:
+/*
+    - **Unique Keys**: Each key must be unique. If a key is already present, the value associated with 
+      the key is updated, not duplicated.
+    
+    - **Null Keys and Values**: HashMap allows one null key and any number of null values.
+    
+    - **Unordered**: The elements are not stored in any specific order. If you want sorted order, 
+      you would need to use `TreeMap` or `LinkedHashMap`.
+    
+    - **Non-synchronized**: HashMap is not thread-safe by default, meaning multiple threads 
+      accessing the same HashMap concurrently can cause data inconsistency unless synchronized externally.
+*/
+
+// 3. Common Operations:
+/*
+    - **put(K key, V value)**: Adds a key-value pair to the map. If the key already exists, it updates 
+      the value associated with that key.
+    
+    - **get(Object key)**: Returns the value associated with the specified key. If the key does not 
+      exist, it returns null.
+    
+    - **remove(Object key)**: Removes the key-value pair associated with the specified key.
+    
+    - **containsKey(Object key)**: Checks whether the map contains the specified key.
+    
+    - **containsValue(Object value)**: Checks whether the map contains the specified value.
+    
+    - **keySet()**: Returns a Set view of the keys in the map.
+    
+    - **values()**: Returns a Collection view of the values in the map.
+    
+    - **entrySet()**: Returns a Set view of the key-value pairs (Map.Entry).
+    
+    - **size()**: Returns the number of key-value pairs in the map.
+    
+    - **clear()**: Removes all key-value pairs from the map.
+*/
+
+// 4. Internal Working:
+/*
+    - HashMap stores keys and values in an array of buckets.
+    - When a key is added, its hash code is computed using the `hashCode()` method. The key's hash code 
+      determines which bucket the entry will be placed in.
+    
+    - If multiple keys hash to the same bucket (a collision), the entries are stored in a linked list or 
+      tree (if the number of entries in a bucket exceeds a certain threshold, the bucket is converted into a 
+      balanced tree for better performance).
+    
+    - The time complexity for most operations like `get()` and `put()` is O(1), but in case of hash collisions, 
+      it can degrade to O(n) in the worst case (for a large number of collisions).
+*/
+
+// 5. Hashing and Collision Resolution:
+/*
+    - **Hashing**: HashMap uses the hash code of the key to calculate the index in the internal array (bucket). 
+      The hash code of the key is important for even distribution of entries.
+    
+    - **Collision Handling**: If two keys produce the same hash code (collision), HashMap uses a linked list 
+      or balanced tree to store the entries in the same bucket. In Java 8+, if a bucket contains more than 8 
+      entries, the list is converted to a balanced tree for better performance.
+    
+    - **Capacity and Load Factor**: 
+      - **Initial Capacity**: The number of buckets in the HashMap when it is created.
+      - **Load Factor**: A measure of how full the HashMap can get before it needs to resize. The default load 
+        factor is 0.75. If the number of entries exceeds the product of the capacity and load factor, the 
+        HashMap resizes, usually by doubling the number of buckets.
+*/
+
+// 6. Performance Considerations:
+/*
+    - The time complexity for the `put()` and `get()` operations is O(1) on average. However, if many keys 
+      hash to the same bucket (collisions), the time complexity can degrade to O(n).
+    
+    - The **resize operation** involves rehashing all the entries, which can cause performance issues if 
+      the map grows too large.
+    
+    - The **load factor** affects the efficiency of the map. A low load factor (e.g., 0.5) reduces collisions, 
+      but increases memory usage, while a high load factor (e.g., 0.9) reduces memory usage, but can increase 
+      the likelihood of collisions.
+*/
+
+// 7. HashMap vs. Other Map Implementations:
+/*
+    - **HashMap vs TreeMap**: TreeMap maintains keys in a sorted order (either natural order or by using a 
+      comparator). HashMap does not guarantee any specific order.
+    
+    - **HashMap vs LinkedHashMap**: LinkedHashMap maintains the insertion order of keys, whereas HashMap 
+      does not guarantee any order.
+    
+    - **HashMap vs Hashtable**: Hashtable is synchronized and thread-safe, but it is slower than HashMap 
+      (which is non-synchronized).
+*/
+
+// 8. Thread-Safety and Concurrency:
+/*
+    - HashMap is **not thread-safe**. To use it in a multi-threaded environment, you can either:
+      - Use **ConcurrentHashMap**: A thread-safe alternative for concurrent access.
+      - Synchronize the map externally using `Collections.synchronizedMap()`.
+    
+    - **fail-fast behavior**: The iterators of a HashMap are fail-fast, meaning if the map is modified 
+      (except through the iterator itself) while iterating, a `ConcurrentModificationException` will be thrown.
+*/
+
+// 9. Null Handling:
+/*
+    - HashMap allows **null** as a key and as a value, but only **one null key** is allowed.
+    - If you try to insert more than one null key, the latest one will overwrite the previous one.
+    - Null keys and values must be handled carefully, as calling methods like `get()` with a null key will 
+      return a null value.
+*/
