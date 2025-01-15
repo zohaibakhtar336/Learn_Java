@@ -1,0 +1,49 @@
+/* 
+ * LinkedHashSet is a part of the Java Collections Framework and implements the Set interface.
+ * It extends the HashSet class but with one key difference: it maintains the order of elements 
+ * in the order they were inserted. It combines the characteristics of a hash table and a linked list.
+ * 
+ * In simple terms, LinkedHashSet is a set that:
+ *  1. Does not allow duplicates (just like HashSet).
+ *  2. Preserves the insertion order of elements.
+ */
+
+// 1. Order Preservation
+// LinkedHashSet maintains the **insertion order** of elements.
+// This means when you iterate over the set, the elements are returned in the order in which they were added.
+// This is in contrast to HashSet, which does not guarantee any specific order.
+
+// 2. Hash Table and Linked List Combination
+// LinkedHashSet internally uses a **hash table** (like HashSet) to store elements, ensuring fast access (O(1) time complexity) 
+// for operations like add(), remove(), and contains().
+// It also uses a **doubly linked list** to maintain the order of the elements.
+// The linked list is what makes it different from HashSet and enables the preservation of insertion order.
+
+// 3. Uniqueness of Elements
+// Just like other sets, a LinkedHashSet **does not allow duplicate elements**.
+// If you try to insert an element that is already present in the set, it will not be added again.
+
+// 4. Performance Considerations
+// - **Add/Remove/Contains** operations in LinkedHashSet have an average time complexity of O(1), 
+//   which is similar to HashSet. This is because the underlying data structure (hash table) is designed for fast lookups.
+// - However, the time complexity of **iteration** is O(n) (where n is the number of elements), which is expected, 
+//   as it must traverse the linked list to maintain the order during iteration.
+
+// 5. Null Elements
+// LinkedHashSet **allows a single null element** (just like HashSet). 
+// This is in contrast to certain other sets (like TreeSet), which do not allow null elements.
+
+// 6. Why Use LinkedHashSet?
+// - **Insertion Order Preservation**: If you need a set that maintains the order of elements as you add them, 
+//   LinkedHashSet is a good choice.
+ //   Example use case: A scenario where you need to process elements in the order they were inserted, 
+ //   like a history or undo functionality.
+  
+// 7. Differences between HashSet and LinkedHashSet:
+// - **HashSet** does not maintain any order of elements (elements may appear in random order when iterated).
+// - **LinkedHashSet** maintains insertion order, meaning the elements will be returned in the order in which they were added.
+  
+// 8. Practical Considerations:
+// - Since LinkedHashSet maintains the insertion order, it has a slightly higher memory cost 
+//   due to the additional overhead of the linked list structure.
+// - It should be chosen when you need the benefits of both hash-based lookup speed and insertion-order preservation.
