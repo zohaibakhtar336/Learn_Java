@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class LibraryBookCollection {
+    public static void main(String[] args) {
+        TreeSet<Integer> bookIDs = new TreeSet<>();
+
+        bookIDs.add(1001);
+        bookIDs.add(1003);
+        bookIDs.add(1002);
+        bookIDs.add(1005);
+
+        bookIDs.add(1003);
+
+        System.out.println("Books available in the library: " + bookIDs);
+
+        boolean hasBook1001 = bookIDs.contains(1001);
+        boolean hasBook1006 = bookIDs.contains(1006);
+        System.out.println("Is book with ID 1001 available? " + hasBook1001);
+        System.out.println("Is book with ID 1006 available? " + hasBook1006);
+
+        Integer firstBookID = bookIDs.first();
+        Integer lastBookID = bookIDs.last();
+        System.out.println("First book ID (lowest): " + firstBookID);
+        System.out.println("Last book ID (highest): " + lastBookID);
+
+        bookIDs.remove(1002);
+
+        System.out.println("After removing book ID 1002: " + bookIDs);
+
+        Integer polledFirst = bookIDs.pollFirst();
+        Integer polledLast = bookIDs.pollLast();
+        System.out.println("Polled first book ID: " + polledFirst);
+        System.out.println("Polled last book ID: " + polledLast);
+
+        System.out.println("Final books in the library: " + bookIDs);
+    }
+}

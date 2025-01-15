@@ -1,0 +1,94 @@
+// TreeSet in Java - A Deep Theoretical Explanation
+
+/*
+ * TreeSet is a NavigableSet implementation that is part of the Java Collections Framework.
+ * It is a collection that implements the Set interface, meaning it does not allow duplicate elements.
+ * TreeSet stores elements in a sorted (ascending) order, based on their natural ordering, 
+ * or according to a custom comparator provided at the time of instantiation.
+ */
+
+// Key Points of TreeSet:
+
+/*
+ * 1. Sorting Order:
+ *    - TreeSet maintains elements in sorted order.
+ *    - By default, elements are ordered according to their natural ordering (Comparable interface).
+ *    - If you want to customize the sorting order, you can pass a Comparator object at the time of 
+ *      creating the TreeSet.
+ */
+
+/*
+ * 2. Unique Elements:
+ *    - Like all Sets, TreeSet does not allow duplicate elements.
+ *    - If an element is added that is considered equivalent to an existing one (based on the 
+ *      `compareTo()` or `compare()` method), the new element will not be added.
+ */
+
+/*
+ * 3. Null Elements:
+ *    - TreeSet does not allow null elements because it relies on the natural ordering or a custom 
+ *      comparator to compare elements.
+ *    - Attempting to insert a null element will throw a `NullPointerException`.
+ */
+
+/*
+ * 4. Time Complexity:
+ *    - TreeSet uses a Red-Black Tree (a self-balancing binary search tree), 
+ *      which ensures that the operations such as adding, removing, and checking for an element 
+ *      all happen in O(log n) time.
+ *    - TreeSet provides fast access and modification operations in comparison to other sets like HashSet.
+ */
+
+/*
+ * 5. Important Methods:
+ *    - `add(E e)`: Adds an element to the set (if it's not already present).
+ *    - `remove(Object o)`: Removes the specified element from the set.
+ *    - `size()`: Returns the number of elements in the set.
+ *    - `clear()`: Removes all elements from the set.
+ *    - `contains(Object o)`: Checks if the specified element exists in the set.
+ *    - `first()`: Returns the first (lowest) element in the set.
+ *    - `last()`: Returns the last (highest) element in the set.
+ *    - `pollFirst()`: Removes and returns the first element.
+ *    - `pollLast()`: Removes and returns the last element.
+ *    - `descendingIterator()`: Returns an iterator over the elements in descending order.
+ */
+
+/*
+ * 6. Set Behavior:
+ *    - TreeSet does not allow null elements (throws `NullPointerException`).
+ *    - The elements in TreeSet are sorted automatically.
+ *    - Since it implements the Set interface, duplicate values are not allowed.
+ *    - Operations like `add()`, `remove()`, and `contains()` are based on comparisons, not equality.
+ *    - Elements must implement the `Comparable` interface or a custom comparator must be provided.
+ */
+
+/*
+ * 7. Comparison Mechanism:
+ *    - TreeSet relies on two ways of ordering elements:
+ *    a. Natural Ordering: The elements in the set are ordered based on their natural ordering, which 
+ *       means the class must implement the `Comparable` interface.
+ *    b. Custom Ordering: A `Comparator` can be provided to define the ordering if you want custom sorting.
+ */
+
+/*
+ * 8. NavigableSet Interface:
+ *    - TreeSet implements `NavigableSet` interface, which provides methods for range-based operations 
+ *      like subsetting, headsets, and tailsets.
+ *    - Some important methods from `NavigableSet`:
+ *        - `lower(E e)`: Returns the greatest element less than the specified element.
+ *        - `floor(E e)`: Returns the greatest element less than or equal to the specified element.
+ *        - `ceiling(E e)`: Returns the least element greater than or equal to the specified element.
+ *        - `higher(E e)`: Returns the least element greater than the specified element.
+ */
+
+/*
+ * 9. TreeSet vs HashSet:
+ *    - Unlike `HashSet`, `TreeSet` is sorted, and operations in TreeSet are logarithmic in complexity (O(log n)).
+ *    - `HashSet` does not maintain any order of elements, while `TreeSet` maintains ascending order 
+ *      of elements or order defined by a custom comparator.
+ *    - `TreeSet` uses a Red-Black Tree, while `HashSet` uses a hash table.
+ */
+
+// In summary, TreeSet is an ordered collection that ensures uniqueness and provides a variety of 
+// methods for navigation and sorting, making it a useful choice when you need a sorted set of elements 
+// with efficient access and modification operations.
