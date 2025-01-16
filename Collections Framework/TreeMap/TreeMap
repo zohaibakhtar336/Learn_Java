@@ -1,0 +1,73 @@
+/*
+ * TreeMap in Java
+ * ----------------
+ * TreeMap is a part of the Java Collections Framework and is present in the java.util package.
+ * It implements the NavigableMap interface, which extends SortedMap and Map interfaces.
+ * TreeMap stores data in a key-value pair format and arranges the keys in a sorted order (natural order or a custom order defined by a Comparator).
+ *
+ * Key Characteristics of TreeMap:
+ * --------------------------------
+ * 1. **Sorting Order:**
+ *    - TreeMap sorts the keys in their natural order (ascending order for numeric keys and alphabetical for strings).
+ *    - A custom sorting order can be defined using a Comparator during the creation of the TreeMap.
+ *
+ * 2. **Underlying Data Structure:**
+ *    - TreeMap is implemented using a Red-Black Tree (a self-balancing binary search tree).
+ *    - The Red-Black Tree ensures that the TreeMap operations remain efficient with O(log n) time complexity for insertion, deletion, and retrieval.
+ *
+ * 3. **Null Handling:**
+ *    - TreeMap does not allow null keys.
+ *    - However, it allows multiple null values.
+ *
+ * 4. **Key Uniqueness:**
+ *    - TreeMap keys must be unique, as it follows the Map interface where keys must be distinct.
+ *
+ * 5. **Thread Safety:**
+ *    - TreeMap is not synchronized, meaning it is not thread-safe.
+ *    - For synchronized usage, Collections.synchronizedSortedMap() can be used.
+ *
+ * 6. **Fail-Fast Behavior:**
+ *    - The TreeMap iterator is fail-fast, meaning if the map is structurally modified after the iterator is created (except through the iterator's own remove method), it will throw a ConcurrentModificationException.
+ *
+ * Common Methods of TreeMap:
+ * --------------------------
+ * - put(K key, V value): Adds a key-value pair to the map.
+ * - get(Object key): Retrieves the value associated with the specified key.
+ * - remove(Object key): Removes the mapping for the specified key.
+ * - size(): Returns the number of key-value pairs.
+ * - containsKey(Object key): Checks if a key is present.
+ * - containsValue(Object value): Checks if a value is present.
+ * - keySet(): Returns a set of keys.
+ * - values(): Returns a collection of values.
+ * - entrySet(): Returns a set of key-value pairs.
+ * - firstKey(): Returns the first (lowest) key.
+ * - lastKey(): Returns the last (highest) key.
+ * - ceilingKey(K key): Returns the least key greater than or equal to the given key.
+ * - floorKey(K key): Returns the greatest key less than or equal to the given key.
+ * - higherKey(K key): Returns the least key strictly greater than the given key.
+ * - lowerKey(K key): Returns the greatest key strictly less than the given key.
+ *
+ * Key Differences Between HashMap and TreeMap:
+ * --------------------------------------------
+ * 1. **Ordering:**
+ *    - HashMap does not maintain any order.
+ *    - TreeMap maintains a natural ordering of keys.
+ *
+ * 2. **Performance:**
+ *    - HashMap provides constant-time performance (O(1)) for basic operations (put, get).
+ *    - TreeMap provides O(log n) time complexity due to the Red-Black Tree structure.
+ *
+ * 3. **Null Keys:**
+ *    - HashMap allows one null key.
+ *    - TreeMap does not allow null keys.
+ *
+ * 4. **Synchronization:**
+ *    - Both are not synchronized.
+ *    - Need to use Collections.synchronizedMap() or ConcurrentHashMap for thread safety.
+ *
+ * Conclusion:
+ * -----------
+ * TreeMap is ideal for use cases where data needs to be stored in a sorted manner.
+ * It offers efficient retrieval and operations based on the Red-Black Tree structure.
+ * Choose TreeMap when you need sorted keys and HashMap when you need better performance without ordering constraints.
+ */
