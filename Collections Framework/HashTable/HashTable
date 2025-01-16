@@ -1,0 +1,78 @@
+/*
+ * The Hashtable class is a part of the Java Collections Framework and implements
+ * the Map interface. It represents a collection of key-value pairs where each 
+ * key is unique, and each key is mapped to exactly one value. A Hashtable is 
+ * similar to HashMap, but with some important differences in terms of synchronization 
+ * and null values.
+ * 
+ * 1. Structure:
+ * - A Hashtable is implemented as an array of buckets, with each bucket storing
+ *   linked lists of key-value pairs. The key-value pairs are hashed, and the 
+ *   hash code of the key determines which bucket the pair is placed into.
+ * 
+ * 2. Synchronization:
+ * - Unlike HashMap, Hashtable is synchronized, meaning that it is thread-safe 
+ *   by default. Multiple threads can access a Hashtable concurrently without 
+ *   causing inconsistency, as synchronized methods prevent concurrent modification 
+ *   of the Hashtable. However, this synchronization comes with a performance overhead.
+ * 
+ * 3. Null Keys and Null Values:
+ * - A major difference between Hashtable and HashMap is that Hashtable does not
+ *   allow `null` as either a key or a value. If you attempt to insert a `null`
+ *   key or value, it throws a NullPointerException.
+ * - On the other hand, HashMap allows one `null` key and multiple `null` values.
+ * 
+ * 4. Performance:
+ * - Due to its synchronization, Hashtable tends to have slower performance 
+ *   compared to other collections, such as HashMap, in a multi-threaded environment.
+ * - However, its thread-safety makes it suitable for legacy systems where 
+ *   synchronization is required.
+ * 
+ * 5. Legacy:
+ * - Hashtable is considered a legacy class in Java. It has been replaced by more 
+ *   modern alternatives such as HashMap (non-synchronized) and ConcurrentHashMap 
+ *   (for thread-safety in multi-threaded environments).
+ * - Despite being part of the original version of Java, it is still used in older 
+ *   applications or systems that require its behavior.
+ * 
+ * 6. Methods:
+ * - Commonly used methods in Hashtable include:
+ *    - put(K key, V value): Inserts a key-value pair into the Hashtable.
+ *    - get(Object key): Returns the value associated with the specified key.
+ *    - remove(Object key): Removes the key-value pair associated with the given key.
+ *    - containsKey(Object key): Checks if a particular key exists in the Hashtable.
+ *    - containsValue(Object value): Checks if a particular value exists in the Hashtable.
+ *    - size(): Returns the number of key-value pairs in the Hashtable.
+ *    - keys(): Returns an Enumeration of all the keys in the Hashtable.
+ * 
+ * 7. Iterator:
+ * - A Hashtable provides an Enumeration for iterating over the keys and values. 
+ *   The Enumeration does not guarantee fail-fast behavior, meaning it will not 
+ *   throw a ConcurrentModificationException if the Hashtable is modified while iterating.
+ *   However, this feature can lead to inconsistent results when accessed by multiple threads.
+ * 
+ * 8. Fail-Safe vs Fail-Fast:
+ * - Fail-Safe: Collections such as ConcurrentHashMap, which are thread-safe,
+ *   provide fail-safe iterators. A fail-safe iterator allows traversal of a collection
+ *   even if the collection is modified during iteration.
+ * - Fail-Fast: Hashtable, being a legacy class, is fail-fast. This means that if 
+ *   a thread modifies the Hashtable while it is being iterated (outside the scope 
+ *   of the iterator's methods), it will throw a ConcurrentModificationException.
+ * 
+ * 9. Thread Safety and ConcurrentHashMap:
+ * - For multi-threaded applications that need a higher degree of concurrency, 
+ *   a ConcurrentHashMap is preferred over a Hashtable. ConcurrentHashMap allows
+ *   concurrent reads and updates to different segments of the map while maintaining 
+ *   thread safety, without the performance penalty of synchronizing the entire map.
+ * 
+ * 10. Deprecated Methods:
+ * - Some methods in Hashtable, like `elements()`, `keys()`, and `putAll()`, 
+ *   are considered outdated, and using more modern alternatives (such as `keySet()` 
+ *   and `values()`) is recommended.
+ * 
+ * Conclusion:
+ * - In modern Java, it is recommended to use HashMap (if thread safety is not 
+ *   a concern) or ConcurrentHashMap (if thread safety is needed). Hashtable is
+ *   kept in the API for compatibility with legacy code but is not commonly used 
+ *   in new applications.
+ */
