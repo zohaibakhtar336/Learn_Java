@@ -1,0 +1,72 @@
+/* 
+ * Java Collection Framework - Iterators and ListIterator
+ * 
+ * 1. Introduction to Iterators:
+ *    - An iterator is an object used to traverse elements of a collection one by one, 
+ *      allowing the user to perform operations on each element during iteration.
+ *    - It is part of the java.util package and provides a way to traverse collections 
+ *      without exposing their internal implementation.
+ *    - Iterators are typically used with collections like List, Set, and Map (through its keySet, values, or entrySet views).
+ * 
+ * 2. Key Methods of Iterator Interface:
+ *    - `boolean hasNext()`: Checks if the collection has more elements to iterate.
+ *      Returns true if there are more elements.
+ *    - `E next()`: Returns the next element in the iteration. Throws NoSuchElementException
+ *      if there are no more elements.
+ *    - `void remove()`: Removes the last element returned by the iterator. It is optional
+ *      and throws UnsupportedOperationException if the remove operation is not supported.
+ * 
+ * 3. Characteristics of Iterator:
+ *    - Fail-Fast Behavior: If the underlying collection is structurally modified (add/remove)
+ *      after the creation of the iterator, a ConcurrentModificationException is thrown. 
+ *      This behavior is known as fail-fast.
+ *    - Forward-Only Traversal: Iterator allows traversal of elements in a forward-only direction.
+ * 
+ * 4. Limitations of Iterator:
+ *    - Cannot traverse in reverse order.
+ *    - Does not allow bi-directional traversal.
+ *    - Limited support for manipulating the collection while iterating (e.g., no add operation).
+ * 
+ * 5. ListIterator:
+ *    - ListIterator is an interface that extends Iterator and provides additional functionality
+ *      for traversing and modifying lists. It is specifically designed for lists such as ArrayList
+ *      and LinkedList.
+ * 
+ * 6. Key Methods of ListIterator:
+ *    - `boolean hasNext()`: Checks if there are more elements when traversing forward.
+ *    - `E next()`: Returns the next element in the list and moves the cursor forward.
+ *    - `boolean hasPrevious()`: Checks if there are more elements when traversing backward.
+ *    - `E previous()`: Returns the previous element in the list and moves the cursor backward.
+ *    - `int nextIndex()`: Returns the index of the next element. Returns the list size if at the end.
+ *    - `int previousIndex()`: Returns the index of the previous element. Returns -1 if at the start.
+ *    - `void remove()`: Removes the last element returned by next() or previous().
+ *    - `void set(E e)`: Replaces the last element returned by next() or previous() with the specified element.
+ *    - `void add(E e)`: Inserts the specified element into the list at the current cursor position.
+ * 
+ * 7. Characteristics of ListIterator:
+ *    - Bi-Directional Traversal: ListIterator supports both forward and backward traversal.
+ *    - Index Information: Provides the ability to retrieve indices during traversal using 
+ *      nextIndex() and previousIndex().
+ *    - Supports Modification: ListIterator allows element modification through set() and insertion
+ *      using add() while iterating.
+ * 
+ * 8. Differences Between Iterator and ListIterator:
+ *    - Scope: Iterator works on all collections, whereas ListIterator is specific to lists.
+ *    - Direction: Iterator only supports forward traversal, while ListIterator supports both 
+ *      forward and backward traversal.
+ *    - Modification: ListIterator allows modification (set() and add()) during iteration, while 
+ *      Iterator only supports element removal.
+ *    - Index Information: ListIterator provides index information, whereas Iterator does not.
+ * 
+ * 9. Fail-Fast vs. Fail-Safe Iterators:
+ *    - Fail-Fast Iterators:
+ *      - Belong to the java.util package and include Iterator and ListIterator.
+ *      - Throw ConcurrentModificationException if the collection is structurally modified
+ *        after the iterator is created.
+ *      - Operate directly on the collection, reflecting real-time changes.
+ *    - Fail-Safe Iterators:
+ *      - Belong to the java.util.concurrent package.
+ *      - Do not throw ConcurrentModificationException because they work on a copy
+ *        (snapshot) of the collection.
+ *      - Changes made to the collection do not affect the iterator's behavior.
+ */
