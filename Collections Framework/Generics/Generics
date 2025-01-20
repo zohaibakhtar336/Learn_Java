@@ -1,0 +1,178 @@
+/*
+ * ==============================================
+ *                GENERICS IN JAVA
+ * ==============================================
+ * 
+ * 1. WHAT ARE GENERICS?
+ *    - Generics are a feature in Java that enable the creation of classes, interfaces, 
+ *      and methods with a placeholder for types.
+ *    - They provide type safety and allow the reusability of code.
+ *    - Introduced in Java 5.
+ *
+ * 2. WHY USE GENERICS?
+ *    - **Type Safety**: Ensures that only a specific type of data can be used, 
+ *      reducing runtime errors.
+ *    - **Compile-Time Checking**: Errors can be detected at compile-time instead of runtime.
+ *    - **Code Reusability**: Write generic methods/classes once and use them with 
+ *      different data types.
+ *
+ * 3. BASIC SYNTAX:
+ *    - Generics use angle brackets `< >` to define a type parameter.
+ *    - Example:
+ *      class ClassName<T> { 
+ *          // T is the type parameter
+ *      }
+ *
+ * 4. KEY TERMS:
+ *    - **Type Parameter**: A placeholder for a type, such as `T`, `E`, `K`, `V`.
+ *      - `T`: Type
+ *      - `E`: Element (commonly used in collections)
+ *      - `K`: Key
+ *      - `V`: Value
+ *    - **Parameterized Type**: A specific type provided for a generic class/method 
+ *      during its usage.
+ *      Example: `ArrayList<String>` where `String` is the parameterized type.
+ *
+ * ==============================================
+ *           GENERIC CLASSES AND METHODS
+ * ==============================================
+ * 
+ * 1. GENERIC CLASS:
+ *    - A class that works with any data type specified during its instantiation.
+ *    - Syntax:
+ *      class ClassName<T> {
+ *          private T data;
+ *          public T getData() { return data; }
+ *          public void setData(T data) { this.data = data; }
+ *      }
+ *
+ * 2. GENERIC METHODS:
+ *    - A method that works with a specified type parameter.
+ *    - Syntax:
+ *      public <T> void methodName(T param) {
+ *          // Code here
+ *      }
+ *
+ * ==============================================
+ *        BOUNDED TYPE PARAMETERS IN GENERICS
+ * ==============================================
+ * 
+ * 1. BOUNDED TYPES:
+ *    - Restrict the type parameter to specific types or their subclasses/superclasses.
+ *    - Syntax: `<T extends SuperType>`
+ *      - Example:
+ *        class ClassName<T extends Number> {
+ *            // Only allows Number or its subclasses (Integer, Double, etc.)
+ *        }
+ *
+ * 2. MULTIPLE BOUNDS:
+ *    - Syntax: `<T extends Class & Interface>`
+ *      - Example:
+ *        class ClassName<T extends Number & Comparable<T>> { }
+ *
+ * ==============================================
+ *           WILDCARDS IN GENERICS
+ * ==============================================
+ * 
+ * 1. UNBOUNDED WILDCARD (?):
+ *    - Represents any type.
+ *    - Example:
+ *      void printList(List<?> list) { // Accepts List of any type }
+ *
+ * 2. UPPER-BOUNDED WILDCARD (? extends Type):
+ *    - Accepts a specific type or its subclasses.
+ *    - Example:
+ *      void printNumbers(List<? extends Number> list) { }
+ *
+ * 3. LOWER-BOUNDED WILDCARD (? super Type):
+ *    - Accepts a specific type or its superclasses.
+ *    - Example:
+ *      void addNumbers(List<? super Integer> list) { }
+ *
+ * ==============================================
+ *       GENERICS WITH JAVA COLLECTIONS
+ * ==============================================
+ * 
+ * 1. GENERICS IN COLLECTIONS:
+ *    - Generics are widely used in Java Collections Framework (JCF) for type safety.
+ *    - Example:
+ *      List<String> names = new ArrayList<>();
+ *      names.add("Ali");  // Allowed
+ *      names.add(10);     // Compile-time error
+ *
+ * ==============================================
+ *           ADVANTAGES OF GENERICS
+ * ==============================================
+ * 
+ * 1. **Type Safety**: Prevents accidental mixing of data types.
+ * 2. **Elimination of Type Casting**: No need for explicit type casting.
+ *    - Example (Before Generics): 
+ *      List list = new ArrayList();
+ *      list.add("Hello");
+ *      String str = (String) list.get(0);  // Explicit cast
+ *
+ *      Example (With Generics):
+ *      List<String> list = new ArrayList<>();
+ *      list.add("Hello");
+ *      String str = list.get(0);  // No cast needed
+ *
+ * 3. **Code Reusability**: Same code works for different data types.
+ *
+ * ==============================================
+ *              LIMITATIONS OF GENERICS
+ * ==============================================
+ * 
+ * 1. **Type Erasure**:
+ *    - Generics use type erasure at runtime, meaning type information is 
+ *      removed during compilation.
+ *    - As a result, you cannot use primitive types (int, char, etc.) directly in Generics.
+ *      Use their wrapper classes (Integer, Character, etc.) instead.
+ *
+ * 2. **Static Members**:
+ *    - Cannot create static fields with type parameters in a generic class.
+ *
+ * 3. **Instanceof with Generics**:
+ *    - Cannot use `instanceof` with a generic type.
+ *      Example: `if (obj instanceof List<String>)` // Not allowed
+ *
+ * ==============================================
+ *                  EXAMPLES
+ * ==============================================
+ * 
+ * 1. GENERIC CLASS:
+ *    class Box<T> {
+ *        private T item;
+ *        public void setItem(T item) { this.item = item; }
+ *        public T getItem() { return item; }
+ *    }
+ *    
+ *    public class Main {
+ *        public static void main(String[] args) {
+ *            Box<String> stringBox = new Box<>();
+ *            stringBox.setItem("Hello");
+ *            System.out.println(stringBox.getItem());
+ *        }
+ *    }
+ *
+ * 2. GENERIC METHOD:
+ *    public class Main {
+ *        public static <T> void printArray(T[] array) {
+ *            for (T element : array) {
+ *                System.out.println(element);
+ *            }
+ *        }
+ *
+ *        public static void main(String[] args) {
+ *            Integer[] numbers = {1, 2, 3};
+ *            printArray(numbers);
+ *        }
+ *    }
+ *
+ * ==============================================
+ *                  SUMMARY
+ * ==============================================
+ * - Generics provide type safety and code reusability.
+ * - Widely used in collections to avoid runtime errors.
+ * - They use type erasure, which means type parameters are only available at compile-time.
+ * - Wildcards (`?`, `? extends`, `? super`) offer flexibility in handling types.
+ */
