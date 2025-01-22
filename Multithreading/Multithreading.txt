@@ -1,0 +1,132 @@
+/**
+ * MULTITHREADING IN JAVA
+ * 
+ * Multithreading is a feature of Java that allows multiple threads to execute concurrently. 
+ * A thread is a lightweight sub-process and the smallest independent unit of execution.
+ * 
+ * Multithreading enables multitasking and improves the performance of applications 
+ * by utilizing CPU resources more efficiently.
+ */
+
+/** 
+ * Key Concepts in Multithreading:
+ * 1. Thread: The smallest unit of execution within a process.
+ * 2. Main Thread: The primary thread created by the JVM to start the execution of a program.
+ * 3. Multitasking: Divided into:
+ *    - Process-based Multitasking: Running multiple programs simultaneously.
+ *    - Thread-based Multitasking: Running multiple threads of a single program concurrently.
+ * 4. Concurrency: Ability to run multiple tasks in overlapping time periods.
+ * 5. Parallelism: Ability to execute multiple tasks simultaneously on multi-core processors.
+ */
+
+/**
+ * Advantages of Multithreading:
+ * 1. Better CPU Utilization: Threads keep the CPU busy with tasks.
+ * 2. Faster Execution: Threads reduce execution time by performing tasks in parallel.
+ * 3. Simplified Code: Complex asynchronous tasks can be handled with threads.
+ * 4. Resource Sharing: Threads within the same process share memory and resources.
+ * 5. Responsiveness: Threads improve user experience by handling background tasks.
+ */
+
+/**
+ * Disadvantages of Multithreading:
+ * 1. Increased Complexity: Writing and debugging multithreaded code is harder.
+ * 2. Synchronization Overhead: Proper handling of shared resources is required.
+ * 3. Context Switching Cost: Switching between threads involves CPU overhead.
+ * 4. Deadlocks and Race Conditions: Improper thread management can cause issues.
+ */
+
+/** 
+ * Life Cycle of a Thread:
+ * 1. NEW: The thread is created but not started yet.
+ * 2. RUNNABLE: The thread is ready to run and waiting for CPU time.
+ * 3. RUNNING: The thread is executing.
+ * 4. BLOCKED/WAITING: The thread is waiting for a resource or signal.
+ * 5. TERMINATED: The thread has completed its execution or has been stopped.
+ */
+
+/**
+ * Important Methods in Thread Management:
+ * 1. start(): Starts a thread and calls its run() method.
+ * 2. run(): Defines the task for the thread to execute.
+ * 3. sleep(milliseconds): Makes the thread pause for a specified time.
+ * 4. join(): Waits for the thread to finish its execution.
+ * 5. interrupt(): Interrupts a sleeping or waiting thread.
+ * 6. isAlive(): Checks if the thread is active.
+ * 7. yield(): Suggests the thread scheduler to allow other threads to execute.
+ */
+
+/**
+ * Thread Priorities:
+ * 1. Threads can have priorities ranging from 1 (MIN_PRIORITY) to 10 (MAX_PRIORITY).
+ * 2. Default priority is 5 (NORM_PRIORITY).
+ * 3. Higher-priority threads are scheduled first, but priorities do not guarantee execution order.
+ */
+
+/**
+ * Synchronization in Multithreading:
+ * Synchronization ensures that shared resources are accessed by only one thread at a time 
+ * to avoid data inconsistency and thread interference.
+ * 
+ * Types of Synchronization:
+ * 1. Synchronized Method: Entire method is synchronized.
+ * 2. Synchronized Block: A block of code within a method is synchronized.
+ * 3. Static Synchronization: Synchronizes static methods or blocks for class-level locking.
+ */
+
+/**
+ * Inter-thread Communication:
+ * Threads can communicate and coordinate their actions using methods such as:
+ * 1. wait(): Causes the thread to wait until another thread calls notify().
+ * 2. notify(): Wakes up a single thread waiting on the object's monitor.
+ * 3. notifyAll(): Wakes up all threads waiting on the object's monitor.
+ * 
+ * These methods must be called within synchronized code to prevent exceptions.
+ */
+
+/**
+ * Thread Safety:
+ * Thread-safe operations ensure that shared resources are handled correctly in a multithreaded environment.
+ * 
+ * Approaches for Thread Safety:
+ * 1. Synchronization: Use synchronized blocks or methods.
+ * 2. Volatile Keyword: Ensures visibility of changes to variables across threads.
+ * 3. Thread-safe Collections: Use classes from the java.util.concurrent package (e.g., ConcurrentHashMap, CopyOnWriteArrayList).
+ * 4. Atomic Classes: Use classes like AtomicInteger, AtomicLong for atomic operations.
+ */
+
+/**
+ * Issues in Multithreading:
+ * 1. Deadlock: Occurs when two or more threads are waiting on each other indefinitely.
+ * 2. Race Condition: Occurs when threads access shared resources in an unpredictable order.
+ * 3. Starvation: Occurs when a thread is unable to access resources due to other high-priority threads.
+ * 4. Livelock: Threads keep responding to each other without making progress.
+ */
+
+/**
+ * Advanced Multithreading Concepts:
+ * 1. Daemon Threads:
+ *    - Threads that run in the background and provide support for non-daemon threads.
+ *    - JVM exits when only daemon threads are running.
+ * 
+ * 2. Thread Pooling:
+ *    - Thread pools reuse a fixed number of threads for executing tasks.
+ *    - Improves performance by reducing thread creation overhead.
+ * 
+ * 3. Callable and Future:
+ *    - Callable interface allows threads to return a result or throw an exception.
+ *    - Future interface is used to retrieve the result of a Callable task.
+ * 
+ * 4. Executors Framework:
+ *    - Provides a higher-level API for managing thread pools.
+ *    - Includes classes like Executors, ExecutorService, and ScheduledExecutorService.
+ */
+
+/**
+ * Best Practices for Multithreading:
+ * 1. Minimize shared resource access to avoid contention.
+ * 2. Use thread-safe classes from the java.util.concurrent package.
+ * 3. Avoid using Thread.sleep() for synchronization; prefer wait() and notify().
+ * 4. Use proper exception handling in threads to avoid unexpected crashes.
+ * 5. Always terminate threads gracefully to release resources.
+ */
